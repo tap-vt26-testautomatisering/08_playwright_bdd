@@ -9,15 +9,21 @@ Rekommenderad mappstruktur
 
 ```text
 root/ 
-├─ .gitignore
 ├─ src/
 | ├─ features/
 | | ├─ pages/
-| | └─ steps/
-| └─ environment.py
+| | | └─ base_page.py
+| | ├─ steps/
+| | | └─ step_add_players.py
+| | ├─ add_players.feature
+| | └─ environment.py
 ├─ tests/
-| └─ unit/
+| ├─ unit/
+| | └─ test_example.py
+| └─ integration/
+|   └─ test_example.py
+├─ .gitignore
 ├─ behave.ini
-├─ requirements.txt
-└─ README.md
+├─ README.md
+└─ requirements.txt
 ```
