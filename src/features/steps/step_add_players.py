@@ -1,17 +1,26 @@
 import re
 from behave import given, when, then
-from behave.api.pending_step import StepNotImplementedError
+from src.features.pages.base_page import BasePage
 
 
 @given(u'vi är på startsidan')
 def step_impl(context):
-    context.page.goto(context.base_url, timeout=10_000)
+    # Med Page Object:
+    base_page = BasePage(context.page)
+    context.base_page = base_page
+    base_page.navigate()
+
+    # Utan Page Object:
+    # context.page.goto(context.base_url, timeout=10_000)
 
 
 @when(u'jag klickar på "Lägg till spelare"')
 def step_impl(context):
+    context.base_page.add_players_button.click()
+
+    # Utan Page Object
     # Tyvärr finns inget test_id så vi får använda role+text
-    context.page.get_by_role("button", name="Lägg till spelare").click()
+    # context.page.get_by_role("button", name="Lägg till spelare").click()
 
 
 @when(u'jag skriver in spelarnamn "{name}"')
