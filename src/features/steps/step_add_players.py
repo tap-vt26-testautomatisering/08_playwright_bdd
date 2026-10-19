@@ -26,7 +26,7 @@ def step_impl(context):
 @when(u'jag skriver in spelarnamn "{name}"')
 def step_impl(context, name):
     # Eftersom det bara finns ett <input> kan vi välja ut den så här. Alternativt kan vi använda: locator("#player-name") för att välja ut baserat på HTML-id.
-    context.page.get_by_role("textbox").fill(name)
+    context.base_page.name_field.fill(name)
 
 
 @then(u'spelarens namn "{name}" ska visas på sidan')

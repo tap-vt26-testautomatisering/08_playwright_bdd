@@ -15,5 +15,3 @@ Feature: lägga till spelare
     And   jag klickar på "Lägg till spelare"
     Then  spelarens namn "David" ska visas på sidan
     And   spelarens namn "Gustav" ska visas på sidan
-
-
